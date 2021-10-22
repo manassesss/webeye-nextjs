@@ -22,8 +22,8 @@ export default function Form() {
                 as={SimpleGrid}
                 maxW={'8xl'}
                 columns={{ base: 1, md: 2 }}
-                spacing={{ base: 10, lg: 32 }}
-                py={{ base: 10, sm: 20, lg: 32 }}>
+                spacing={{ base: 10, lg: 20 }}
+                py={{ base: 0, sm: 0, lg: 0 }}>
                 <Stack spacing={{ base: 10, md: 20 }} justifyContent="center">
                     <Heading
                         lineHeight={1.1}
@@ -115,8 +115,8 @@ export default function Form() {
             </Container>
             <Blur
                 position={'absolute'}
-                top={400}
-                left={-60}
+                top={-10}
+                left={0}
                 style={{ filter: 'blur(90px)' }}
             />
         </Box>
@@ -138,8 +138,8 @@ export const Blur = (props) => {
     return (
         <Icon
             width={useBreakpointValue({ base: '100%', md: '40vw', lg: '30vw' })}
-            zIndex={useBreakpointValue({ base: -1, md: -1, lg: 0 })}
-            height="560px"
+            zIndex={-1}
+            height="500px"
             viewBox="0 0 528 560"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
