@@ -51,11 +51,10 @@ export default function Calibracao({isFullScreen, setsIsFullScreen,webcamRef,set
             })
         else {
             setLoading(true)
-            await setTimeout(() => {
-                setIniciar(true)
+            setIniciar(true)
+            await setTimeout(() => {           
                 setLoading(false)
-                console.log("error")
-            }, 10000);
+            }, 3000);
         }
     }
 
