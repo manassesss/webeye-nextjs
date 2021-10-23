@@ -79,7 +79,7 @@ export default function Form() {
                             />
 
                             <Stack py={{ base: 1, sm: 1, lg: 1 }} spacing={3} alignItems="center" flexDirection="row">
-                                <Text color={'gray.700'} fontSize={{ base: 'md', sm: 'lg' }} px={4} mt={2}>
+                                <Text color={'gray.700'} fontSize={{ base: 'md', sm: 'lg' }} px={2} mt={2}>
                                 Sexo:
                                 </Text>
                                 <RadioButtonGroup />

@@ -4,26 +4,26 @@ import styles from '../../styles/Captura.module.css'
 
 export default function ShowVideos({isFullScreen,posicaoAtual,setPosicaoAtual,setFinishLoad,setLoadingMessage,setFinalizado}) {
     const reactPlayerRef = useRef();
-    const coordenadas = [[0, 0], [0, 500], [0, 1003], [283, 0], [283, 500], [283, 1003], [565, 0], [565, 500], [565, 1003]];
+    const coordenadas = [[0, 500], [0, 500], [0, 1003], [283, 0], [283, 500], [283, 1003], [565, 0], [565, 500], [565, 1003]];
     const [coordenada, setCoordenada] = useState([0, 0])
     const [isPlaying, setIsPlaying] = useState(true)
 
     const _setCoordenadas = () => {
         setCoordenada([coordenadas[posicaoAtual][0], coordenadas[posicaoAtual][1]])
         if (posicaoAtual < 8)
-        setPosicaoAtual(posicaoAtual + 1)
+            setPosicaoAtual(posicaoAtual + 1)
     }
 
     const handleProgress = async  (progresso) => {
-        console.log("progressoAcumulado=",progresso.playedSeconds,"posicaoAtual=",posicaoAtual)
-        if(posicaoAtual == 8 && progresso.playedSeconds >= 30*9){        
+        console.log("progressoAcumulado=",progresso.playedSeconds,"posicaoAtual=",posicaoAtual,"vetor=",coordenadas[posicaoAtual])
+        if(posicaoAtual == 8 && progresso.playedSeconds >= 30*10){        
             setIsPlaying(false);
             setFinishLoad(true)
             setLoadingMessage(1);
             await setTimeout(() => {           
                 setFinishLoad(false)
                 setFinalizado(true)
-            }, 4000);
+            }, 5000);
         }else if (progresso.playedSeconds / 30 > posicaoAtual+1) {
            _setCoordenadas()
         }

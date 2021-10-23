@@ -64,10 +64,9 @@ export default function Calibracao({isFullScreen, setsIsFullScreen,webcamRef,set
             align={'center'}
             justify={'center'}
             py={12}
-            bg={useColorModeValue('gray.50', 'gray.800')}>
+           >
             <Stack
                 boxShadow={'2xl'}
-                bg={useColorModeValue('white', 'gray.700')}
                 rounded={'xl'}
                 p={10}
                 spacing={8}

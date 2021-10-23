@@ -20,22 +20,24 @@ export default function Captura() {
 
     return (
         <div className={styles.container2} >
+            <div style={{ display: (!isFullScreen || !inicio) ? "flex" : "none" }}>
+                <Calibracao
+                    isFullScreen={isFullScreen}
+                    setsIsFullScreen={setsIsFullScreen}
+                    webcamRef={webcamRef}
+                    setIniciar={setIniciar}
+                    setLoading={setLoading} />
+            </div>
+
             {
                 finalizado ?
                     <Sucesso />
                     :
-                    (!isFullScreen || !inicio) ?
-                        <Calibracao
-                            isFullScreen={isFullScreen}
-                            setsIsFullScreen={setsIsFullScreen}
-                            webcamRef={webcamRef}
-                            setIniciar={setIniciar}
-                            setLoading={setLoading} />
+                    isFullScreen && inicio && loading ?
+                        <Loading
+                            messages={loadingMessage == 0 ? mensagens_inicio : mensagens_final} />
                         :
-                        loading ?
-                            <Loading
-                                messages={loadingMessage == 0 ? mensagens_inicio : mensagens_final} />
-                            :
+                        isFullScreen && inicio && !loading ?
                             <ShowVideos
                                 isFullScreen={isFullScreen}
                                 posicaoAtual={posicaoAtual}
@@ -43,6 +45,7 @@ export default function Captura() {
                                 setFinalizado={setFinalizado}
                                 setLoadingMessage={setLoadingMessage}
                                 setFinishLoad={setLoading} />
+                            : <></>
             }
         </div>
 
