@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Calibracao  from '../components/Calibracao'
-import ShowVideos  from '../components/ShowVideos'
+import Calibracao from '../components/Calibracao'
+import ShowVideos from '../components/ShowVideos'
+import Loading from '../components/Loading'
+import styles from '../styles/Captura.module.css'
 
 export default function Captura() {
     const reactPlayerRef = useRef();
@@ -11,21 +13,27 @@ export default function Captura() {
     const [loading, setLoading] = useState(false)
 
     return (
-        <>
-       {
-        (!isFullScreen || !inicio) ?
-            <Calibracao 
-                isFullScreen={isFullScreen}  
-                setsIsFullScreen={setsIsFullScreen} 
-                webcamRef={webcamRef} 
-                setIniciar={setIniciar} />
-        :
-            <ShowVideos 
-                isFullScreen={isFullScreen} 
-                posicaoAtual={posicaoAtual} 
-                setPosicaoAtual={setPosicaoAtual} 
-                setFinishLoad={setLoading}  /> 
-        }
-        </>
+        <div className={styles.container2} >
+            {
+                (!isFullScreen || !inicio) ?
+                    <Calibracao
+                        isFullScreen={isFullScreen}
+                        setsIsFullScreen={setsIsFullScreen}
+                        webcamRef={webcamRef}
+                        setIniciar={setIniciar}
+                        setLoading={setLoading}/>
+                    :
+                loading ?
+                        <Loading 
+                            text={"Aguarde um instante..."}/>
+                    :
+                        <ShowVideos
+                            isFullScreen={isFullScreen}
+                            posicaoAtual={posicaoAtual}
+                            setPosicaoAtual={setPosicaoAtual}
+                            setFinishLoad={setLoading} />
+            }
+        </div>
+
     );
 }
