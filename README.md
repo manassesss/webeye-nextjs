@@ -1,34 +1,82 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/42661697/138454610-e776efff-65c5-455d-959e-d0847a251049.png" height="200rem" alt="logo">
 
-## Getting Started
+  <br/>
+   <br/>
 
-First, run the development server:
+[![Languages](https://img.shields.io/github/languages/count/samuelssan28/webeye-nextjs?color=%23004AAD&style=flat-square)](#)
+[![Stars](https://img.shields.io/github/stars/samuelssan28/webeye-nextjs?color=004AAD&style=flat-square)](https://github.com/samuelssan28/webeye-nextjs/stargazers)
+[![Forks](https://img.shields.io/github/forks/samuelssan28/webeye-nextjs?color=004AAD&style=flat-square)](https://github.com/samuelssan28/webeye-nextjs/forks)
+  
+</div>
+
+<h4 align="center">
+ Est galisum nisi in dolore similique vel iure numquam id odio aperiam! Est voluptatem voluptatem et obcaec
+</h4>
+
+<p align="justify">
+ Lorem ipsum dolor sit amet. Ut sunt fugit aut voluptas nobis et veritatis laborum. Nam quas blanditiis aut galisum architecto eos blanditiis sint est dicta cupiditate est provident ipsum et laboriosam quia. Non accusamus totam est accusantium voluptatum ad debitis ullam ex nostrum velit hic eveniet veniam At doloremque voluptatem.
+
+## Tecnologies
+This project was developed using cutting edge front-end technologies.
+
+- [ReactJS](https://reactjs.org/)
+- [Javascript](https://www.typescriptlang.org/)
+- [Next.js](https://nextjs.org/)
+
+## 💻 Getting started
+
+### Requirements
+
+- You need to install both [Node.js](https://nodejs.org/en/download/) and [Yarn](https://yarnpkg.com/) to run this project.
+
+**Clone the project and access the folder**
 
 ```bash
-npm run dev
-# or
-yarn dev
+$ git clone https://github.com/samuelssan28/webeye-nextjs.git && cd webeye-nextjs
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Follow the steps below**
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+# Install the dependencies
+$ yarn
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+# Run the backend fake server
+$ yarn server
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+# Run the web server
+$ yarn dev
+```
 
-## Learn More
+The app will be available for access on your browser at `http://localhost:3000`
 
-To learn more about Next.js, take a look at the following resources:
+## 🤝 Colaboradores
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+We thank the following people who contributed to this project:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<table>  
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/42661697?v=4" width="100px;" alt="Foto do Samuel"/><br>
+        <sub>
+          <b>Samuel Santos</b>
+        </sub>
+      </a>
+    </td>
+  <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/43761534?v=4" width="100px;" alt="Foto do Manassés"/><br>
+        <sub>
+          <b>Manassés Silva</b>
+        </sub>
+      </a>
+    </td>
+    </tr>
+</table>
 
-## Deploy on Vercel
+## 📝 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---

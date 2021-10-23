@@ -10,7 +10,7 @@ import {
     useToast
 } from '@chakra-ui/react';
 
-export default function Calibracao({isFullScreen, setsIsFullScreen,webcamRef,setIniciar}) {
+export default function Calibracao({isFullScreen, setsIsFullScreen,webcamRef,setIniciar,setLoading}) {
     const toast = useToast()
 
     const videoConstraints = {
@@ -41,7 +41,7 @@ export default function Calibracao({isFullScreen, setsIsFullScreen,webcamRef,set
         }
     }
 
-    const handleIniciar = (event) => {
+    const handleIniciar = async(event) => {
 
         if(!isFullScreen)
             toast({
@@ -49,8 +49,13 @@ export default function Calibracao({isFullScreen, setsIsFullScreen,webcamRef,set
                 status: "error",
                 isClosable: true,
             })
-        else
+        else {
+            setLoading(true)
             setIniciar(true)
+            await setTimeout(() => {           
+                setLoading(false)
+            }, 3000);
+        }
     }
 
     return (

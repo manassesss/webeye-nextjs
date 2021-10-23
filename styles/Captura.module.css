@@ -1,19 +1,24 @@
 .container {
-  min-height: 100vh;
   padding: 0rem;
   display: flex;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
   
 }
-
-
+.container2{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .card {
   padding: 0.1rem;
   position:relative;
   border: 1px solid rgb(26, 25, 25);
   border-radius: 0px;
   width: 34%;
-  height: 40%;
+  height: 34%;
 }
 
 .card:hover,
