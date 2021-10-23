@@ -64,7 +64,15 @@ We thank the following people who contributed to this project:
         </sub>
       </a>
     </td>
-  </tr>
+  <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/43761534?v=4" width="100px;" alt="Foto do Manassés"/><br>
+        <sub>
+          <b>Manassés Silva</b>
+        </sub>
+      </a>
+    </td>
+    </tr>
 </table>
 
 ## 📝 License
