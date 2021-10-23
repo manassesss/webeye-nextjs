@@ -53,7 +53,7 @@ export default function Form() {
 
                         </Heading>
                         <Text color={'gray.500'} fontSize={{ base: 'sm', sm: 'md' }}>
-                            É uma aplicação com o ojetivo de ispum lorem ispum lorem ispum lorem
+                            É uma aplicação com o objetivo de ispum lorem ispum lorem ispum lorem
                             ispum lorem ispum lorem ispum lorem ispum lorem
                         </Text>
                     </Stack>
