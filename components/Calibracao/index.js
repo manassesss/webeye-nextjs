@@ -10,7 +10,7 @@ import {
     useToast
 } from '@chakra-ui/react';
 
-export default function Calibracao({isFullScreen, setsIsFullScreen,webcamRef,setIniciar,setLoading}) {
+export default function Calibracao({ isFullScreen,setsIsFullScreen, webcamRef, setIniciar, setLoading, setIsPlaying }) {
     const toast = useToast()
 
     const videoConstraints = {
@@ -19,16 +19,9 @@ export default function Calibracao({isFullScreen, setsIsFullScreen,webcamRef,set
         facingMode: "user"
     };
 
-    const capture = React.useCallback(
-        () => {
-            const imageSrc = webcamRef.current.getScreenshot();
-        },
-        [webcamRef]
-    );
-
-    const _setFullScreem =  () => {
+    const _setFullScreem = () => {
         let elem = document.documentElement;;
-        
+
         if (elem.requestFullscreen) {
             elem.requestFullscreen();
             setsIsFullScreen(true)
@@ -41,9 +34,8 @@ export default function Calibracao({isFullScreen, setsIsFullScreen,webcamRef,set
         }
     }
 
-    const handleIniciar = async(event) => {
-
-        if(!isFullScreen)
+    const handleIniciar = async (event) => {
+        if (!isFullScreen)
             toast({
                 title: `Por favor habilite a tela cheia antes de iniciar!`,
                 status: "error",
@@ -52,8 +44,9 @@ export default function Calibracao({isFullScreen, setsIsFullScreen,webcamRef,set
         else {
             setLoading(true)
             setIniciar(true)
-            await setTimeout(() => {           
+            await setTimeout(() => {
                 setLoading(false)
+                setIsPlaying(true)
             }, 3000);
         }
     }
@@ -64,7 +57,7 @@ export default function Calibracao({isFullScreen, setsIsFullScreen,webcamRef,set
             align={'center'}
             justify={'center'}
             py={12}
-           >
+        >
             <Stack
                 boxShadow={'2xl'}
                 rounded={'xl'}
@@ -104,7 +97,7 @@ export default function Calibracao({isFullScreen, setsIsFullScreen,webcamRef,set
                             bgGradient: 'linear(to-r, blue.400,green.400)',
                             boxShadow: 'xl',
                         }}>
-                        Habilitar tela cheia 
+                        Habilitar tela cheia
                     </Button>
 
                     <Button
