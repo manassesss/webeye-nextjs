@@ -8,12 +8,12 @@
 
 
 .card {
-  padding: 0.1rem;
+  padding: 0rem;
   position:relative;
   border: 1px solid rgb(26, 25, 25);
   border-radius: 0px;
-  width: 34%;
-  height: 40%;
+  width: 33%;
+  height: 33%;
 }
 
 .card:hover,
