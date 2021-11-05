@@ -10,7 +10,7 @@ import {
     useToast
 } from '@chakra-ui/react';
 
-export default function Calibracao({isFullScreen, setsIsFullScreen,webcamRef,setIniciar}) {
+export default function Calibracao({ isFullScreen,setsIsFullScreen, webcamRef, setIniciar, setLoading, setIsPlaying }) {
     const toast = useToast()
 
     const videoConstraints = {
@@ -19,16 +19,9 @@ export default function Calibracao({isFullScreen, setsIsFullScreen,webcamRef,set
         facingMode: "user"
     };
 
-    const capture = React.useCallback(
-        () => {
-            const imageSrc = webcamRef.current.getScreenshot();
-        },
-        [webcamRef]
-    );
-
-    const _setFullScreem =  () => {
+    const _setFullScreem = () => {
         let elem = document.documentElement;;
-        
+
         if (elem.requestFullscreen) {
             elem.requestFullscreen();
             setsIsFullScreen(true)
@@ -41,16 +34,21 @@ export default function Calibracao({isFullScreen, setsIsFullScreen,webcamRef,set
         }
     }
 
-    const handleIniciar = (event) => {
-
-        if(!isFullScreen)
+    const handleIniciar = async (event) => {
+        if (!isFullScreen)
             toast({
                 title: `Por favor habilite a tela cheia antes de iniciar!`,
                 status: "error",
                 isClosable: true,
             })
-        else
+        else {
+            setLoading(true)
             setIniciar(true)
+            await setTimeout(() => {
+                setLoading(false)
+                setIsPlaying(true)
+            }, 3000);
+        }
     }
 
     return (
@@ -59,10 +57,9 @@ export default function Calibracao({isFullScreen, setsIsFullScreen,webcamRef,set
             align={'center'}
             justify={'center'}
             py={12}
-            bg={useColorModeValue('gray.50', 'gray.800')}>
+        >
             <Stack
                 boxShadow={'2xl'}
-                bg={useColorModeValue('white', 'gray.700')}
                 rounded={'xl'}
                 p={10}
                 spacing={8}
@@ -100,7 +97,7 @@ export default function Calibracao({isFullScreen, setsIsFullScreen,webcamRef,set
                             bgGradient: 'linear(to-r, blue.400,green.400)',
                             boxShadow: 'xl',
                         }}>
-                        Habilitar tela cheia 
+                        Habilitar tela cheia
                     </Button>
 
                     <Button
